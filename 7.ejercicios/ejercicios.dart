@@ -3,6 +3,10 @@ void main() {
   PromedioListas();
   print("----- Ejercicio 2 -----");
   IntercepcionListas();
+  print("----- Ejercicio 3 -----");
+  palindromo();
+  print("----- Ejercicio 4 -----");
+  listaPares();
 }
 /*
 ----------------------------------------------ejercicio 1-----------------------------------------------
@@ -19,8 +23,7 @@ mostrara la edad mayor, menor y el promedio de las edades ingresadas. */
   print("Numero menor de la lista $lista.last");// numero mayor de la lista
   print(sum/6); // promedio
 }
-
-/*----------------------------------------------ejercicio 1-----------------------------------------------
+/*----------------------------------------------ejercicio 2-----------------------------------------------
 Tome las lista A=[1,1,2,3,5,8,13,21,34,55,89] Y B=[1,2,3,4,5,6,7,8,9,10,11,12,13] y escriba un programa que devuelva una lista que contenga solo los elementos que son comunes 
 entre ellos sin duplicar. Asegurese de que su progrmana dunciones en dos listas de diferentes tamaños*/
 void IntercepcionListas() {
@@ -31,3 +34,37 @@ void IntercepcionListas() {
   final listC = listA.fold<Set>(listA.first.toSet(), (a, b) => a.intersection(b.toSet()));
   print(listC);
 }
+/*----------------------------------------------ejercicio 3-----------------------------------------------
+Validar si una cadena es un palíndromo o no.
+*/
+void palindromo(){
+  String palabra = 'amor a roma';
+  var palabraInvertida = StringBuffer();
+  print("palindromo");
+  
+  for(var i= palabra.length - 1;i>=0;i--){
+    palabraInvertida.write(String.fromCharCode(palabra.runes.elementAt(i)));
+  }
+  print(palabraInvertida);
+  print(palabra);
+  if(palabra == palabraInvertida.toString()){
+    print('es palimdromo');
+    }
+  else{print('no es palindromo');}
+}
+/*----------------------------------------------ejercicio 4 -----------------------------------------------
+Por ejemplo tiene una lista guardada en una variable:
+a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100].
+Escriba un código de Dart que tome esta lista y cree una nueva lista que contenga
+solo los elementos pares de esta lista.
+*/
+void listaPares(){
+  List<int> lista = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+  List<int?> listaPares =[];
+  for(var i=0; i<=lista.length-1; i++){
+    int dato = lista[i];
+    if(dato%2==0){listaPares.add(dato);}
+  }
+  print(listaPares);
+}
+
